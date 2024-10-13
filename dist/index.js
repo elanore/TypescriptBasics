@@ -61,3 +61,12 @@ console.log("sum  = ", addNum(5, 7));
 function log(message) {
     console.log(message);
 }
+log(1);
+log("hello shiny");
+const user1 = {
+    id: 1,
+    name: 'john',
+};
+//both functions below uses same interface but creates two differenct functions to do two different operations
+const add = (x, y) => x + y;
+const sub = (x, y) => x - y;
