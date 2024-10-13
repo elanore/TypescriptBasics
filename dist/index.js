@@ -70,3 +70,43 @@ const user1 = {
 //both functions below uses same interface but creates two differenct functions to do two different operations
 const add = (x, y) => x + y;
 const sub = (x, y) => x - y;
+class Person {
+    constructor(pid, name) {
+        this.id = pid;
+        this.name = name;
+        console.log(123);
+    }
+    //custom method inside class 
+    register() {
+        return `${this.name} is now registered`;
+    }
+}
+const shiny = new Person(123, 'shiny joseph');
+console.log(shiny);
+console.log(shiny.register()); //shiny joseph is now registered
+//console.log(shiny.id) // throws error if id is set as private and accessed out side the class
+class Employee extends Person {
+    constructor(id, name, position) {
+        super(id, name);
+        this.position = position;
+    }
+}
+const emp = new Employee(3, "john", "developer");
+console.log(emp.name);
+console.log(emp.register()); //register comes from person class which is extended 
+//employee class is known as subclasses 
+// Generics - used to build reusable components 
+function getArray(items) {
+    return new Array().concat(items);
+}
+let numArray = getArray([1, 2, 3, 4]);
+let strArray = getArray(['shiny', 'john', 'hello']);
+numArray.push('hello'); //this works
+//so tp prevent this from happening
+//generic <T> is defined and type is defined in specific numArray1 and stringArray1
+function getArray1(items) {
+    return new Array().concat(items);
+}
+let numArray1 = getArray1([1, 2, 3, 4]);
+let stringArray1 = getArray1(['shiny', 'john', "hello"]);
+//numArray1.push('hello')  will throw type error 
