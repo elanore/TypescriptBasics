@@ -39,3 +39,25 @@ var Directions;
 console.log("directions", Directions.up); // expected out put is 0
 console.log("directions", Directions.left); // if up is 1 then output is 3 else 2
 console.log("directions", Directions.right); //output is right if values are given as string 
+const user = {
+    id: 1,
+    name: 'john',
+};
+//Type Assertion
+//cid has type as any but customer id is eId with number as type
+//two ways to declare it given below
+let eId = 1;
+//let customerId = <number>eId;
+let customerId = eId;
+// Functions
+//implicitany - as false wont require x and y type declaration - not recomended
+//function return value type is also declared
+function addNum(x, y) {
+    return x + y;
+}
+console.log("sum  = ", addNum(5, 7));
+// when function doesnt have any return the return type will be void,example below
+// Void 
+function log(message) {
+    console.log(message);
+}
